@@ -93,3 +93,19 @@ li:hover {
   right: 3px;
   cursor: pointer;
 }
+#myInput {
+  box-sizing: border-box;
+  background-image: url("search-icon.png");
+  background-position: -6px -5px;
+  background-repeat: no-repeat;
+  /* position: fixed; */
+  font-size: 16px;
+  padding: 14px 20px 12px 45px;
+  border: none;
+  min-width: 300px;
+  border-bottom: 1px solid #ddd;
+}
+
+#myInput:focus {
+  outline: 3px solid #ddd;
+}

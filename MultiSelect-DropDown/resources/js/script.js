@@ -119,3 +119,22 @@ const remove_selected_item = (elem, e) => {
     console.error(e);
   }
 };
+
+// filter the dropdown content
+const filterContent = () => {
+  let inputElement, filterValue, htmlCollector, i;
+  inputElement = document.getElementById("myInput");
+  filterValue = inputElement.value.toUpperCase();
+  let element = document.getElementById("multi-select");
+  htmlCollector = element.getElementsByTagName("li");
+  debugger;
+  let arr = [...htmlCollector];
+  arr.filter(elem => {
+    let value = elem.textContent || elem.innerText;
+    if (value.toUpperCase().indexOf(filterValue) > -1) {
+      elem.style.display = "";
+    } else {
+      elem.style.display = "none";
+    }
+  });
+};
