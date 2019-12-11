@@ -1,18 +1,15 @@
 // scripts
 const currentDate = document.querySelector("#current_date");
-debugger;
+
 const date = new Date();
 currentDate.innerHTML = date.toDateString();
-
-let apiResult = [];
 
 // insert the fetched data to dropdown
 insertData = async () => {
   try {
-    debugger;
     let response = await fetchData();
     if (response) {
-      apiResult = response;
+      let apiResult = response;
       const multiSelect = document.querySelector("#multi-select");
 
       apiResult.forEach(createDropDownElement);
@@ -21,7 +18,6 @@ insertData = async () => {
 
         listElement.appendChild(document.createTextNode(item.name));
         listElement.setAttribute("value", item.region);
-        debugger;
         listElement.addEventListener("click", function() {
           return add_selected_item(this, event);
         });
@@ -55,7 +51,6 @@ const fetchData = () => {
 const add_selected_item = (elem, e) => {
   e.stopPropagation();
   try {
-    debugger;
     let option_text = elem.innerText;
     let option_value = elem.getAttribute("value");
     let selected_items = elem.parentElement.parentElement.querySelector(
@@ -84,7 +79,6 @@ const add_selected_item = (elem, e) => {
 
     selected_items.appendChild(parentElement);
 
-    debugger;
     elem.remove();
   } catch (e) {
     console.error(e);
@@ -94,7 +88,6 @@ const add_selected_item = (elem, e) => {
 // remove the items
 const remove_selected_item = (elem, e) => {
   e.stopPropagation();
-  debugger;
   try {
     let option_text = elem.parentElement.querySelector(".selected_content")
       .innerHTML;
@@ -122,12 +115,12 @@ const remove_selected_item = (elem, e) => {
 
 // filter the dropdown content
 const filterContent = () => {
-  let inputElement, filterValue, htmlCollector, i;
+  let inputElement, filterValue, htmlCollector;
   inputElement = document.getElementById("myInput");
   filterValue = inputElement.value.toUpperCase();
   let element = document.getElementById("multi-select");
   htmlCollector = element.getElementsByTagName("li");
-  debugger;
+
   let arr = [...htmlCollector];
   arr.filter(elem => {
     let value = elem.textContent || elem.innerText;

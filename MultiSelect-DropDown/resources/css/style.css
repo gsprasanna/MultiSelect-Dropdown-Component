@@ -109,3 +109,10 @@ li:hover {
 #myInput:focus {
   outline: 3px solid #ddd;
 }
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 400px;
+}
