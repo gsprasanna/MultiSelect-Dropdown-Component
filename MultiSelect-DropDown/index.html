@@ -28,7 +28,14 @@
           class="multiselect_fields dropbtn"
           data-placeholder="Choose options"
         ></div>
-        <div class="dropdown-content" id="multi-select"></div>
+        <div class="dropdown-content" id="multi-select">
+          <input
+            type="text"
+            placeholder="Search.."
+            id="myInput"
+            onkeyup="filterContent()"
+          />
+        </div>
       </div>
     </div>
     ~
